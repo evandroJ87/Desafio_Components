@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import UserDetails from './components/UserDetails.js';
 
 function App() {
+const users= [
+  {id: 1, name:"Evandro", age: 21, job:"Dev"},
+  {id: 2, name:"João", age: 17, job:"Estudante"},
+  {id: 3, name:"Pedro", age: 27, job:"Dentista"},
+  {id: 4, name:"Juninho", age: 10, job:"Dorminhoco"},
+]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    {users.map((user)=>(
+      <UserDetails key= {user.id} name= {user.name} age={user.age} job={user.job}/>
+    ))}
     </div>
   );
 }
